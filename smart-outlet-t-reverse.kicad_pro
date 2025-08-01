@@ -190,11 +190,9 @@
         0.0,
         0.1524,
         0.2,
-        0.4,
         0.6,
         0.8,
-        1.0,
-        1.2
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -500,7 +498,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1524,
+        "track_width": 0.6,
         "via_diameter": 0.508,
         "via_drill": 0.254,
         "wire_width": 6
@@ -525,7 +523,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3,
+        "track_width": 0.8,
         "via_diameter": 0.6,
         "via_drill": 0.254
       }
@@ -537,6 +535,9 @@
     "netclass_assignments": {
       "+5V": [
         "Power"
+      ],
+      "/power supply/HVDC": [
+        "HVPower"
       ],
       "FUSED_AC": [
         "HVPower"
@@ -564,9 +565,6 @@
       ],
       "Net-(D9-A)": [
         "Power"
-      ],
-      "Net-(U1-DRAIN)": [
-        "HVPower"
       ]
     },
     "netclass_patterns": []

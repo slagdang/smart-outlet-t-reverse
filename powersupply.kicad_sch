@@ -2257,6 +2257,16 @@
 		)
 		(uuid "fac09a92-a999-413b-92bb-2b67d07a7bac")
 	)
+	(label "HVDC"
+		(at 86.36 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "64ea49b1-8b60-497d-a463-60e969fa4f89")
+	)
 	(global_label "FUSED_AC"
 		(shape output)
 		(at 40.64 57.15 180)
