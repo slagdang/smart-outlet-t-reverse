@@ -2531,7 +2531,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "designfootprints:NEMA_5R_slot"
 			(at 157.48 138.43 0)
 			(effects
 				(font
@@ -2798,7 +2798,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "designfootprints:NEMA_5P_pin"
 			(at 99.06 138.43 0)
 			(effects
 				(font
@@ -3616,7 +3616,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "designfootprints:NEMA_5P_pin"
 			(at 99.06 152.4 0)
 			(effects
 				(font
@@ -3683,7 +3683,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "designfootprints:NEMA_5R_slot"
 			(at 157.48 152.4 0)
 			(effects
 				(font
