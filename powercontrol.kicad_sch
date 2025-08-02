@@ -1554,6 +1554,82 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "SUPPLY NEUTRAL"
+		(exclude_from_sim no)
+		(at 70.358 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "29b01ebb-ce96-4290-ad8c-1b7af9e0fc00")
+	)
+	(text "F1 is RFS series"
+		(exclude_from_sim no)
+		(at 84.582 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2df31878-8b35-42bf-a28f-caf1d66e8d7b")
+	)
+	(text "OUTLET GROUND"
+		(exclude_from_sim no)
+		(at 176.784 149.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "35c6b67a-970e-495e-8cf9-5b11c12f1d25")
+	)
+	(text "OUTLET NEUTRAL"
+		(exclude_from_sim no)
+		(at 176.784 134.874 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c5dd76e-db49-442d-822b-97c9983232b1")
+	)
+	(text "SUPPLY HOT"
+		(exclude_from_sim no)
+		(at 69.088 111.252 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "738367b6-8c07-4104-a3f8-4795abe3e044")
+	)
+	(text "SUPPLY PROTECTIVE GROUND"
+		(exclude_from_sim no)
+		(at 70.612 149.098 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b1ca17d5-ca09-4aec-b007-283fb86a0e04")
+	)
+	(text "OUTLET HOT"
+		(exclude_from_sim no)
+		(at 177.292 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f463b10d-b7c6-4134-b818-8924ae0df5da")
+	)
 	(text "capacitors on this page are X5R unless noted"
 		(exclude_from_sim no)
 		(at 259.588 23.114 0)
