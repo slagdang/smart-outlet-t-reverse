@@ -561,6 +561,12 @@
       "+5V": [
         "Power"
       ],
+      "/power control/LINE_IN": [
+        "HVPower"
+      ],
+      "/power control/LINE_OUT": [
+        "HVPower"
+      ],
       "/power supply/HVDC": [
         "HVPower"
       ],
