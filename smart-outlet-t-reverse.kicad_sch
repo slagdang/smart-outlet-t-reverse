@@ -6,7 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "T smart switched power outlet")
-		(date "2025-08-01")
+		(date "2025-08-17")
+		(rev "a")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -655,7 +656,7 @@
 	)
 	(text "pin labels 3 to 1\non MC1 edge connector\n\nP5\nP8\nP4\n\nother pins are not connected electrically\nbut are connected physically for stability"
 		(exclude_from_sim no)
-		(at 92.202 59.436 0)
+		(at 92.202 58.674 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -762,6 +763,17 @@
 			(justify left)
 		)
 		(uuid "9d699b0f-acc8-4fbb-99b1-3f29d103eece")
+	)
+	(text "ceramic capacitors on this page are 10V X5R unless otherwise noted"
+		(exclude_from_sim no)
+		(at 193.802 19.304 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a30b6454-fed4-4ae8-8b99-4ae862433979")
 	)
 	(text "longer overhang is away from edge of board"
 		(exclude_from_sim no)
@@ -1150,7 +1162,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10µF"
+		(property "Value" "10µ"
 			(at 135.89 66.0399 0)
 			(effects
 				(font

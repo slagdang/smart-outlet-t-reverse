@@ -1630,7 +1630,7 @@
 		)
 		(uuid "f463b10d-b7c6-4134-b818-8924ae0df5da")
 	)
-	(text "capacitors on this page are X5R unless noted"
+	(text "capacitors on this page are 10V X5R unless noted"
 		(exclude_from_sim no)
 		(at 259.588 23.114 0)
 		(effects
@@ -2457,15 +2457,15 @@
 		(fields_autoplaced yes)
 		(uuid "0e2b0485-08df-4751-bbc2-5b68a7b847d0")
 		(property "Reference" "R125"
-			(at 101.6 52.07 90)
+			(at 101.6 39.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "510Ω"
-			(at 101.6 49.53 90)
+		(property "Value" "510"
+			(at 101.6 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3003,7 +3003,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "10k"
 			(at 96.52 72.3899 0)
 			(effects
 				(font
