@@ -570,6 +570,9 @@
       "/power supply/HVDC": [
         "HVPower"
       ],
+      "/power supply/U1_GND": [
+        "Power"
+      ],
       "FUSED_AC": [
         "HVPower"
       ],

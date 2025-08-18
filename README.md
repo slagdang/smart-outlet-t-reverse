@@ -50,12 +50,13 @@ a GPO line high or low.
 
 The device contains a transformerless switching power supply to generate a
 neutral-referenced 5V supply.
-It contains a controller sub-module which has a Realtek Bluetooth radio and
-microcontroller which uses the 5.0V supply.
+It contains a controller sub-module which has a Realtek Bluetooth radio
+and microcontroller (RTL8720CM) which utilizes a supply derived from
+the 5.0V supply.
 It uses a 277V/16A-rated relay on the live side to turn the connected device
 on and off.
 
-The board has about 2mm of creepage to conductors on the hot (switched) side.
+The board has about 2mm of creepage to conductors on the live (switched) side.
 The protective ground pin is not connected to anything inside except the
 output receptacle.
 The controller uses a GPO to turn the relay on and off through an NPN transistor.
@@ -70,6 +71,89 @@ This is more expensive than an LDO but produces less heat. It saves
 up to 700mW continuously versus an LDO.
 The power lost in the fusible resistor is probably
 several times larger than these savings and thus more than wipes them out.
+
+### Main schematic page
+
+C3 provides power smoothing for the controller board.
+
+### Power supply page
+
+The this uses a sophisticated neutral-referenced transformerless
+switch-mode power supply (SMPS). The sophistication is mostly contained
+within U1 and will not be fully explained here.
+
+The short version is that U1 takes unregulated energy in and outputs
+a reduced regulated voltage. It is capable of converting excess
+voltage into increased current similar to how a transformer does
+and the power (Watts) in is similar to the power out, just the
+available voltage at the output is lower than the input and the
+available current is increased inversely. It does this by rapidly
+switching its output on and off to send energy into an inductor.
+This inductor stores the energy in its magnetic field. It is drawn
+off by the devices being supplied. It adjusts its switching duty
+cycle so as to send the right amount of energy into the inductor
+to match the energy being drawn out of the inductor and thus
+keep the inductor voltage relatively constant. The inductor’s
+resistance to current change and its ability to store energy in
+its magnetic field are critical in making this happen.
+
+Fused AC power at about 120V RMS comes in on FUSED_AC. D1 performs a positive
+half-wave rectification on the AC. D2 applies a redundant half-wave
+rectification. D2 is present only because diodes have some tendency to
+become short circuits when failing. This would put AC voltage into the
+circuit and produce a small conflagration within the device. By having two
+diodes both D1 and D2 have to fail short to produce this result. This
+should reduce the incidence of these small fires to the square of the
+incidence rate with a single diode. So if this failure rate would be
+one in one thousand over the life of the product then with two
+consecutive diodes the failure rate would drop to one in a million
+instead.
+
+D2 allows C172 to be filled from FUSED_AC but not emptied. The voltage
+on C172 will be relatively constant at the level of the highest positive
+voltage on FUSED_AC although it will fall slowly as C172 is drained by
+the devices it powers until the next positive AC sine wave arrives to
+recharge it. This falling and rising is called ripple.
+L1 operates as a filter to prevent high-frequency
+voltage changes produced on HVDC from being presented on FUSED_AC. These
+changes would produce RF noise on the AC lines which would cause the
+device to fail FCC testing. L1 also helps to smooth the ripple from
+passing to HVDC. EC2 acts as a final smoothing to make the power as
+close to flat DC as possible.
+
+U1 receives its initial power over pin 4. When operating it drives
+current through L2 by driving it out through pin 5 into U1_GND
+while the internal switch is on. Once it switches off current
+continues through the catch diode D3. When operating it receives
+its own regulated power output through pin 3 via D11.
+C173 serves to smooth this voltage.
+
+The top of C170 will be at the regulated voltage during operation.
+R20 serves as a dummy load so as to make regulation easier at low
+current draws.
+
+### Power control page
+
+Several functions are provided on this page. The simplest is to connect input
+ground directly to the ground on the power outlet side and input neutral
+directly to the neutral on the power outlet side.
+
+The second function is to supply AC power to the power supply circuit
+so it can create 5V DC power from the AC power. This is done via fuse F1.
+F1 is a 10Ω fusible resistor that will fail at high currents due to heat.
+
+The final function is to switch the output live power on and off
+using a relay. Relay SW1 connects the output live to the wall source when
+energized. SW1 is energized by the controller applying a positive
+logic-level voltage on OUTPUT_ON. Once the base (pin 1) of Q2 is 0.6V
+or more positive than the emitter (pin 2) then current flows into
+the collector (pin 3) and out the emitter. This happens when POWER_EN
+is driven high by the controller. This induces a current through R127
+and the base. The current will be at least 6mA. This will cause Q1 to
+attempt to drive sufficient current through the collector and the coil
+of SW1 to energize SW1 fully. D9 serves to snub the voltage the
+inductor (coil) in SW1 produces momentarily when Q2 is switched off.
+R127 serves to to ensure Q2 turns off when desired.
 
 ## Meta-analysis
 
